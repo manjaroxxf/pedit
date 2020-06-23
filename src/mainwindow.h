@@ -41,6 +41,7 @@ class MainWindow : public QMainWindow
   QAction *newAct;
   QAction *openAct;
   QAction *saveAct;
+  QAction *saveAsAct;
   QAction *exitAct;
 };
 #endif  // MAINWINDOW_H
