@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>assets/icons/add.svg</file>
+        <file>assets/icons/open_in_full.svg</file>
+    </qresource>
+</RCC>

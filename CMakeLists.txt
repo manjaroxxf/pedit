@@ -17,6 +17,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 set(SOURCES
+    resources.qrc
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
