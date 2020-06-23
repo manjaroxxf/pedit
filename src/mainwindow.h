@@ -21,13 +21,26 @@ class MainWindow : public QMainWindow
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
+ private slots:
+  void newFile();
+  void open();
+  void save();
+  void saveAs();
+
  private:
   QPlainTextEdit *plainTextEdit;
+  QString currentFile;
+
+  bool maybeSave();
+  void setCurrentFile(const QString &fileName);
+  void saveFile(const QString &fileName);
 
   void setupActions();
   void setupMenus();
   QMenu *fileMenu;
   QAction *newAct;
   QAction *openAct;
+  QAction *saveAct;
+  QAction *exitAct;
 };
 #endif  // MAINWINDOW_H

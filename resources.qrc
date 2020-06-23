@@ -2,5 +2,7 @@
     <qresource prefix="/icons">
         <file>assets/icons/add.svg</file>
         <file>assets/icons/open_in_full.svg</file>
+        <file>assets/icons/save.svg</file>
+        <file>assets/icons/exit_to_app.svg</file>
     </qresource>
 </RCC>
