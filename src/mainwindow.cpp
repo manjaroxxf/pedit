@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
   resize(550, 600);
   setCentralWidget(plainTextEdit);
 
+  plainTextEdit->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+
   setupActions();
   setupMenus();
 }
