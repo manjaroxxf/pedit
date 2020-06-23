@@ -2,3 +2,6 @@
 
 PandaOS notepad.
 
+## LICENSE
+
+Licensed under GPLv3
