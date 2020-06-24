@@ -22,6 +22,8 @@ set(SOURCES
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
+    src/ptextedit.cpp
+    src/ptextedit.h
 )
 
 add_executable(panda-note

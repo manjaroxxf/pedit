@@ -5,7 +5,8 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QMenuBar>
-#include <QPlainTextEdit>
+
+#include "ptextedit.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -28,12 +29,9 @@ class MainWindow : public QMainWindow
   void saveAs();
 
  private:
-  QPlainTextEdit *plainTextEdit;
-  QString currentFile;
+  PTextEdit *plainTextEdit;
 
   bool maybeSave();
-  void setCurrentFile(const QString &fileName);
-  void saveFile(const QString &fileName);
 
   void setupActions();
   void setupMenus();
