@@ -21,6 +21,9 @@ PTextEdit::PTextEdit()
                      KSyntaxHighlighting::Repository::DarkTheme)
                : m_repository.defaultTheme(
                      KSyntaxHighlighting::Repository::LightTheme));
+
+  connect(this, &QPlainTextEdit::cursorPositionChanged, this,
+          &PTextEdit::highlightCurrentLine);
 }
 
 void PTextEdit::openFile(const QString &fileName)
@@ -114,5 +117,5 @@ void PTextEdit::setTheme(const KSyntaxHighlighting::Theme &theme)
 
   m_highlighter->setTheme(theme);
   m_highlighter->rehighlight();
-  // TODO: highlightCurrentLine();
+  highlightCurrentLine();
 }
