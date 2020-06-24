@@ -2,7 +2,7 @@
 
 PandaOS notepad.
 
-![record](https://imgur.com/vkOYgGp)
+![record](https://sm.ms/image/8x7VCJETP6kROsi)
 
 ## LICENSE
 

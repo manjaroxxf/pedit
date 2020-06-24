@@ -15,6 +15,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(KF5SyntaxHighlighting REQUIRED)
 
 set(SOURCES
     resources.qrc
@@ -27,4 +28,4 @@ add_executable(panda-note
     ${SOURCES}
 )
 
-target_link_libraries(panda-note Qt5::Widgets)
+target_link_libraries(panda-note Qt5::Widgets KF5::SyntaxHighlighting)
