@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(panda-note LANGUAGES CXX)
+project(pedit LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -26,8 +26,8 @@ set(SOURCES
     src/ptextedit.h
 )
 
-add_executable(panda-note
+add_executable(pedit
     ${SOURCES}
 )
 
-target_link_libraries(panda-note Qt5::Widgets KF5::SyntaxHighlighting)
+target_link_libraries(pedit Qt5::Widgets KF5::SyntaxHighlighting)

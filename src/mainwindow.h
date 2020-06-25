@@ -16,32 +16,32 @@ QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
-  Q_OBJECT
+    Q_OBJECT
 
- public:
-  MainWindow(QWidget *parent = nullptr);
-  ~MainWindow();
+   public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
- private slots:
-  void newFile();
-  void open();
-  void save();
-  void saveAs();
+   private slots:
+    void newFile();
+    void open();
+    void save();
+    void saveAs();
 
- private:
-  PTextEdit *plainTextEdit;
+   private:
+    PTextEdit *plainTextEdit;
 
-  bool maybeSave();
+    bool maybeSave();
 
-  void setupActions();
-  void setupMenus();
-  QMenu *fileMenu;
-  QAction *newAct;
-  QAction *openAct;
-  QAction *saveAct;
-  QAction *saveAsAct;
-  QAction *exitAct;
-  QMenu *helpMenu;
-  QAction *aboutQtAct;
+    void setupActions();
+    void setupMenus();
+    QMenu *fileMenu;
+    QAction *newAct;
+    QAction *openAct;
+    QAction *saveAct;
+    QAction *saveAsAct;
+    QAction *exitAct;
+    QMenu *helpMenu;
+    QAction *aboutQtAct;
 };
 #endif  // MAINWINDOW_H

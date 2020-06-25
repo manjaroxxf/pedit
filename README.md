@@ -1,6 +1,6 @@
-# Panda Note
+# pedit
 
-PandaOS notepad.
+PandaOS text editor.
 
 ## LICENSE
 
