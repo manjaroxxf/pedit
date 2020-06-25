@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 
+#include <QApplication>
 #include <QDebug>
 #include <QFile>
 #include <QFileDialog>
@@ -108,7 +109,11 @@ void MainWindow::setupActions()
                         tr("&Exit"), this);
   exitAct->setShortcut(QKeySequence::Quit);
   exitAct->setStatusTip(tr("Exit panda-note"));
-  connect(exitAct, &QAction::triggered, this, &QWidget::close);
+  connect(exitAct, &QAction::triggered, this, &QApplication::closeAllWindows);
+
+  aboutQtAct = new QAction(tr("About Qt"));
+  aboutQtAct->setStatusTip(tr("About Qt"));
+  connect(aboutQtAct, &QAction::triggered, this, &QApplication::aboutQt);
 }
 
 void MainWindow::setupMenus()
@@ -120,4 +125,7 @@ void MainWindow::setupMenus()
   fileMenu->addAction(saveAsAct);
   fileMenu->addSeparator();
   fileMenu->addAction(exitAct);
+
+  helpMenu = menuBar()->addMenu(tr("&Help"));
+  helpMenu->addAction(aboutQtAct);
 }
