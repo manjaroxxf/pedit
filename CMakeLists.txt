@@ -24,6 +24,8 @@ set(SOURCES
     src/mainwindow.h
     src/ptextedit.cpp
     src/ptextedit.h
+    src/confighelper.cpp
+    src/confighelper.h
 )
 
 add_executable(pedit
