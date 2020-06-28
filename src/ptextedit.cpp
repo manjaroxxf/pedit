@@ -41,8 +41,9 @@ void PTextEditSidebar::mouseReleaseEvent(QMouseEvent *event)
     QWidget::mouseReleaseEvent(event);
 }
 
-PTextEdit::PTextEdit()
-    : m_highlighter(new KSyntaxHighlighting::SyntaxHighlighter(document())),
+PTextEdit::PTextEdit(ConfigHelper *cfHelper)
+    : configHelper(cfHelper),
+      m_highlighter(new KSyntaxHighlighting::SyntaxHighlighter(document())),
       sidebar(new PTextEditSidebar(this))
 {
     setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
@@ -203,8 +204,8 @@ int PTextEdit::sidebarWidth() const
         ++digits;
         count /= 10;
     }
-    return 4 + fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits +
-           fontMetrics().lineSpacing();
+    return 15 + fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits +
+         fontMetrics().lineSpacing();
 }
 
 void PTextEdit::sidebarPaintEvent(QPaintEvent *event)

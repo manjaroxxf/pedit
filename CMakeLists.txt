@@ -16,6 +16,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(KF5SyntaxHighlighting REQUIRED)
+find_package(KF5TextEditor REQUIRED)
 
 set(SOURCES
     resources.qrc
@@ -26,10 +27,12 @@ set(SOURCES
     src/ptextedit.h
     src/confighelper.cpp
     src/confighelper.h
+    src/settingswindow.cpp
+    src/settingswindow.h
 )
 
 add_executable(pedit
     ${SOURCES}
 )
 
-target_link_libraries(pedit Qt5::Widgets KF5::SyntaxHighlighting)
+target_link_libraries(pedit Qt5::Widgets KF5::SyntaxHighlighting KF5::TextEditor)

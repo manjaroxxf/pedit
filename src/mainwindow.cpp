@@ -9,8 +9,10 @@
 #include <QSaveFile>
 #include <QTextStream>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), plainTextEdit(new PTextEdit)
+MainWindow::MainWindow(ConfigHelper *cfHelper)
+    : configHelper(cfHelper),
+      plainTextEdit(new PTextEdit(configHelper)),
+      settingsWindow(new SettingsWindow)
 {
     resize(550, 600);
     setCentralWidget(plainTextEdit);
@@ -106,6 +108,13 @@ void MainWindow::setupActions()
     saveAsAct->setShortcut(QKeySequence::SaveAs);
     connect(saveAsAct, &QAction::triggered, this, &MainWindow::saveAs);
 
+    settingsAct = new QAction(QIcon(":/icons/assets/icons/settings.svg"),
+                              tr("&Settings"), this);
+    settingsAct->setShortcut(QKeySequence::Preferences);
+    settingsAct->setStatusTip(tr("Open settings window"));
+    connect(settingsAct, &QAction::triggered,
+            [&]() { settingsWindow->show(); });
+
     exitAct = new QAction(QIcon(":/icons/assets/icons/exit_to_app.svg"),
                           tr("&Exit"), this);
     exitAct->setShortcut(QKeySequence::Quit);
@@ -124,6 +133,8 @@ void MainWindow::setupMenus()
     fileMenu->addAction(openAct);
     fileMenu->addAction(saveAct);
     fileMenu->addAction(saveAsAct);
+    fileMenu->addSeparator();
+    fileMenu->addAction(settingsAct);
     fileMenu->addSeparator();
     fileMenu->addAction(exitAct);
 

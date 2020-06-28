@@ -6,6 +6,8 @@
 #include <QMenu>
 #include <QPlainTextEdit>
 
+#include "confighelper.h"
+
 namespace KSyntaxHighlighting
 {
 class SyntaxHighlighter;
@@ -17,7 +19,7 @@ class PTextEdit : public QPlainTextEdit
 {
     Q_OBJECT
    public:
-    PTextEdit();
+    PTextEdit(ConfigHelper *cfHelper);
 
     QString currentFile;
 
@@ -30,6 +32,7 @@ class PTextEdit : public QPlainTextEdit
     void resizeEvent(QResizeEvent *event) override;
 
    private:
+    ConfigHelper *configHelper;
     friend class PTextEditSidebar;
 
     int sidebarWidth() const;

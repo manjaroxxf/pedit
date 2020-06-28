@@ -6,7 +6,9 @@
 #include <QMenu>
 #include <QMenuBar>
 
+#include "confighelper.h"
 #include "ptextedit.h"
+#include "settingswindow.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -19,7 +21,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
    public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(ConfigHelper *cfHelper);
     ~MainWindow();
 
    private slots:
@@ -29,7 +31,9 @@ class MainWindow : public QMainWindow
     void saveAs();
 
    private:
+    ConfigHelper *configHelper;
     PTextEdit *plainTextEdit;
+    SettingsWindow *settingsWindow;
 
     bool maybeSave();
 
@@ -40,6 +44,7 @@ class MainWindow : public QMainWindow
     QAction *openAct;
     QAction *saveAct;
     QAction *saveAsAct;
+    QAction *settingsAct;
     QAction *exitAct;
     QMenu *helpMenu;
     QAction *aboutQtAct;
