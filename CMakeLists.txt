@@ -23,8 +23,6 @@ set(SOURCES
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
-    src/ptextedit.cpp
-    src/ptextedit.h
     src/confighelper.cpp
     src/confighelper.h
     src/settingswindow.cpp
