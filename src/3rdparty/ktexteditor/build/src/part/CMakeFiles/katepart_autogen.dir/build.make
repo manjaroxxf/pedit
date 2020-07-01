@@ -75,7 +75,7 @@ include src/part/CMakeFiles/katepart_autogen.dir/progress.make
 
 src/part/CMakeFiles/katepart_autogen: src/part/katepart.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target katepart"
-	cd /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/part && /usr/bin/cmake -E cmake_autogen /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/part/CMakeFiles/katepart_autogen.dir/AutogenInfo.json Debug
+	cd /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/part && /usr/bin/cmake -E cmake_autogen /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/part/CMakeFiles/katepart_autogen.dir/AutogenInfo.json ""
 
 src/part/katepart.json: ../src/part/katepart.desktop
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating katepart.json"

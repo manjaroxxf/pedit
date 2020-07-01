@@ -74,11 +74,11 @@ CMAKE_BINARY_DIR = /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build
 include CMakeFiles/fetch-translations.dir/progress.make
 
 CMakeFiles/fetch-translations: releaseme
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Downloading translations for ktexteditor branch trunk..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Downloading translations for pedit branch trunk..."
 	git -C /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/releaseme pull
 	cmake -E remove_directory /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/po
 	cmake -E remove_directory /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/poqm
-	ruby /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/releaseme/fetchpo.rb --origin trunk --project ktexteditor --output-dir /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/po --output-poqm-dir /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/poqm /home/chungzh/Code/pedit/src/3rdparty/ktexteditor
+	ruby /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/releaseme/fetchpo.rb --origin trunk --project pedit --output-dir /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/po --output-poqm-dir /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/poqm /home/chungzh/Code/pedit/src/3rdparty/ktexteditor
 
 releaseme:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Fetching releaseme scripts to download translations..."

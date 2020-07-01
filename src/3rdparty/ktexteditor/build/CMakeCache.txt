@@ -42,7 +42,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -539,9 +539,6 @@ Qt5PrintSupport_DIR:PATH=/usr/lib64/cmake/Qt5PrintSupport
 //The directory containing a CMake configuration file for Qt5Qml.
 Qt5Qml_DIR:PATH=/usr/lib64/cmake/Qt5Qml
 
-//The directory containing a CMake configuration file for Qt5Test.
-Qt5Test_DIR:PATH=/usr/lib64/cmake/Qt5Test
-
 //The directory containing a CMake configuration file for Qt5Widgets.
 Qt5Widgets_DIR:PATH=/usr/lib64/cmake/Qt5Widgets
 
@@ -563,8 +560,6 @@ katepart_LIB_DEPENDS:STATIC=general;KF5TextEditor;general;KF5::SyntaxHighlightin
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
-//STRINGS property for variable: CMAKE_BUILD_TYPE
-CMAKE_BUILD_TYPE-STRINGS:INTERNAL=Debug;Release;MinSizeRel;RelWithDebInfo
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build
 //Major version of cmake used to create the current loaded cache
@@ -663,7 +658,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

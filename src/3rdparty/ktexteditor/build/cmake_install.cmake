@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -58,8 +58,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xKTextEditorx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/KF5TextEditor" TYPE FILE FILES "/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles/Export/lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/KF5TextEditor" TYPE FILE FILES "/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles/Export/lib/cmake/KF5TextEditor/KF5TextEditorTargets-debug.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/KF5TextEditor" TYPE FILE FILES "/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles/Export/lib/cmake/KF5TextEditor/KF5TextEditorTargets-noconfig.cmake")
   endif()
 endif()
 
@@ -70,8 +70,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/cmake_install.cmake")
-  include("/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/autotests/cmake_install.cmake")
-  include("/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/templates/cmake_install.cmake")
 
 endif()
 

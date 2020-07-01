@@ -75,7 +75,7 @@ include src/CMakeFiles/KF5TextEditor_autogen.dir/progress.make
 
 src/CMakeFiles/KF5TextEditor_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target KF5TextEditor"
-	cd /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src && /usr/bin/cmake -E cmake_autogen /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/CMakeFiles/KF5TextEditor_autogen.dir/AutogenInfo.json Debug
+	cd /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src && /usr/bin/cmake -E cmake_autogen /home/chungzh/Code/pedit/src/3rdparty/ktexteditor/build/src/CMakeFiles/KF5TextEditor_autogen.dir/AutogenInfo.json ""
 
 KF5TextEditor_autogen: src/CMakeFiles/KF5TextEditor_autogen
 KF5TextEditor_autogen: src/CMakeFiles/KF5TextEditor_autogen.dir/build.make
