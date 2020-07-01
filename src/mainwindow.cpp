@@ -16,7 +16,7 @@
 #include <QSaveFile>
 #include <QTextStream>
 
-MainWindow::MainWindow(ConfigHelper *cfHelper) : configHelper(cfHelper)
+MainWindow::MainWindow()
 {
     resize(550, 600);
 

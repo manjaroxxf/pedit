@@ -11,8 +11,7 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QMenuBar>
-
-#include "confighelper.h"
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -25,7 +24,7 @@ class MainWindow : public KParts::MainWindow
     Q_OBJECT
 
    public:
-    MainWindow(ConfigHelper *cfHelper);
+    MainWindow();
     ~MainWindow();
 
    private slots:
@@ -33,7 +32,7 @@ class MainWindow : public KParts::MainWindow
 
    private:
     void setupActions();
-    ConfigHelper *configHelper;
+
     KTextEditor::Editor *editor;
     KTextEditor::Document *doc;
     KTextEditor::View *view;
