@@ -1,5 +1,12 @@
 #include "mainwindow.h"
 
+#include <KActionCollection>
+#include <KMessageBox>
+#include <KStandardAction>
+#include <KXMLGUIFactory>
+
+//
+
 #include <QApplication>
 #include <QDebug>
 #include <QFile>
@@ -9,8 +16,7 @@
 #include <QSaveFile>
 #include <QTextStream>
 
-MainWindow::MainWindow(ConfigHelper *cfHelper)
-    : configHelper(cfHelper), settingsWindow(new SettingsWindow)
+MainWindow::MainWindow(ConfigHelper *cfHelper) : configHelper(cfHelper)
 {
     resize(550, 600);
 
@@ -19,6 +25,22 @@ MainWindow::MainWindow(ConfigHelper *cfHelper)
     view = doc->createView(this);
 
     setCentralWidget(view);
+    setupActions();
+
+    guiFactory()->addClient(view);
+    createShellGUI(true);
+
+    show();
 }
 
 MainWindow::~MainWindow() {}
+
+void MainWindow::setupActions()
+{
+    KStandardAction::open(this, SLOT(openFile()), actionCollection());
+}
+
+void MainWindow::openFile()
+{
+    view->document()->openUrl(QFileDialog::getOpenFileUrl());
+}

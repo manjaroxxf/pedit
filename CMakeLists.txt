@@ -25,8 +25,6 @@ set(SOURCES
     src/mainwindow.h
     src/confighelper.cpp
     src/confighelper.h
-    src/settingswindow.cpp
-    src/settingswindow.h
 )
 
 add_executable(pedit

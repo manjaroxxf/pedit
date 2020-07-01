@@ -6,13 +6,13 @@
 #include <ktexteditor/mainwindow.h>
 #include <ktexteditor/view.h>
 
+#include <KParts/MainWindow>
 #include <QAction>
 #include <QMainWindow>
 #include <QMenu>
 #include <QMenuBar>
 
 #include "confighelper.h"
-#include "settingswindow.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -20,7 +20,7 @@ class QMenu;
 class QPlainTextEdit;
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public KParts::MainWindow
 {
     Q_OBJECT
 
@@ -28,10 +28,12 @@ class MainWindow : public QMainWindow
     MainWindow(ConfigHelper *cfHelper);
     ~MainWindow();
 
-   private:
-    ConfigHelper *configHelper;
-    SettingsWindow *settingsWindow;
+   private slots:
+    void openFile();
 
+   private:
+    void setupActions();
+    ConfigHelper *configHelper;
     KTextEditor::Editor *editor;
     KTextEditor::Document *doc;
     KTextEditor::View *view;
