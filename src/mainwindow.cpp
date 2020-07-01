@@ -1,5 +1,12 @@
 #include "mainwindow.h"
 
+#include <KActionCollection>
+#include <KMessageBox>
+#include <KStandardAction>
+#include <KXMLGUIFactory>
+
+//
+
 #include <QApplication>
 #include <QDebug>
 #include <QFile>
@@ -9,135 +16,31 @@
 #include <QSaveFile>
 #include <QTextStream>
 
-MainWindow::MainWindow(ConfigHelper *cfHelper)
-    : configHelper(cfHelper),
-      plainTextEdit(new PTextEdit(configHelper)),
-      settingsWindow(new SettingsWindow)
+MainWindow::MainWindow()
 {
     resize(550, 600);
-    setCentralWidget(plainTextEdit);
 
+    editor = KTextEditor::Editor::instance();
+    doc = editor->createDocument(this);
+    view = doc->createView(this);
+
+    setCentralWidget(view);
     setupActions();
-    setupMenus();
+
+    guiFactory()->addClient(view);
+    createShellGUI(true);
+
+    show();
 }
 
-MainWindow::~MainWindow() { delete plainTextEdit; }
-
-void MainWindow::newFile()
-{
-    if (maybeSave()) {
-        plainTextEdit->clear();
-        plainTextEdit->setCurrentFile(QString());
-        setWindowFilePath("Untitled.txt");
-    }
-}
-
-void MainWindow::open()
-{
-    if (maybeSave()) {
-        QString fileName = QFileDialog::getOpenFileName(this);
-        if (!fileName.isEmpty()) {
-            plainTextEdit->openFile(fileName);
-            setWindowFilePath(fileName);
-        }
-    }
-}
-
-void MainWindow::save()
-{
-    if (plainTextEdit->currentFile.isEmpty())
-        saveAs();
-    else
-        plainTextEdit->saveFile(plainTextEdit->currentFile);
-}
-
-void MainWindow::saveAs()
-{
-    QFileDialog dialog(this);
-    dialog.setWindowModality(Qt::WindowModal);
-    dialog.setAcceptMode(QFileDialog::AcceptSave);
-    if (dialog.exec() == QDialog::Accepted) {
-        const QString fileName = dialog.selectedFiles().first();
-        plainTextEdit->saveFile(fileName);
-        setWindowFilePath(fileName);
-    }
-}
-
-bool MainWindow::maybeSave()
-{
-    if (!plainTextEdit->document()->isModified()) return true;
-    const QMessageBox::StandardButton ret = QMessageBox::warning(
-        this, tr("Application"),
-        tr("The document has been modified.\n"
-           "Do you want to save your changes?"),
-        QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
-    switch (ret) {
-        case QMessageBox::Save:
-            save();
-            return true;
-        case QMessageBox::Cancel:
-            return false;
-        default:
-            break;
-    }
-    return true;
-}
+MainWindow::~MainWindow() {}
 
 void MainWindow::setupActions()
 {
-    newAct =
-        new QAction(QIcon(":/icons/assets/icons/add.svg"), tr("&New"), this);
-    newAct->setShortcuts(QKeySequence::New);
-    newAct->setStatusTip(tr("Create a new file"));
-    connect(newAct, &QAction::triggered, this, &MainWindow::newFile);
-
-    openAct = new QAction(QIcon(":/icons/assets/icons/open_in_full.svg"),
-                          tr("&Open"), this);
-    openAct->setShortcut(QKeySequence::Open);
-    openAct->setStatusTip(tr("Open a file"));
-    connect(openAct, &QAction::triggered, this, &MainWindow::open);
-
-    saveAct =
-        new QAction(QIcon(":/icons/assets/icons/save.svg"), tr("&Save"), this);
-    saveAct->setShortcut(QKeySequence::Save);
-    saveAct->setStatusTip(tr("Save a file"));
-    connect(saveAct, &QAction::triggered, this, &MainWindow::save);
-
-    saveAsAct = new QAction(QIcon(":/icons/assets/icons/save.svg"),
-                            tr("&Save as"), this);
-    saveAsAct->setShortcut(QKeySequence::SaveAs);
-    connect(saveAsAct, &QAction::triggered, this, &MainWindow::saveAs);
-
-    settingsAct = new QAction(QIcon(":/icons/assets/icons/settings.svg"),
-                              tr("&Settings"), this);
-    settingsAct->setShortcut(QKeySequence::Preferences);
-    settingsAct->setStatusTip(tr("Open settings window"));
-    connect(settingsAct, &QAction::triggered,
-            [&]() { settingsWindow->show(); });
-
-    exitAct = new QAction(QIcon(":/icons/assets/icons/exit_to_app.svg"),
-                          tr("&Exit"), this);
-    exitAct->setShortcut(QKeySequence::Quit);
-    exitAct->setStatusTip(tr("Exit pedit"));
-    connect(exitAct, &QAction::triggered, this, &QApplication::closeAllWindows);
-
-    aboutQtAct = new QAction(tr("About Qt"));
-    aboutQtAct->setStatusTip(tr("About Qt"));
-    connect(aboutQtAct, &QAction::triggered, this, &QApplication::aboutQt);
+    KStandardAction::open(this, SLOT(openFile()), actionCollection());
 }
 
-void MainWindow::setupMenus()
+void MainWindow::openFile()
 {
-    fileMenu = menuBar()->addMenu(tr("&File"));
-    fileMenu->addAction(newAct);
-    fileMenu->addAction(openAct);
-    fileMenu->addAction(saveAct);
-    fileMenu->addAction(saveAsAct);
-    fileMenu->addSeparator();
-    fileMenu->addAction(settingsAct);
-    fileMenu->addSeparator();
-    fileMenu->addAction(exitAct);
-
-    helpMenu = menuBar()->addMenu(tr("&Help"));
-    helpMenu->addAction(aboutQtAct);
+    view->document()->openUrl(QFileDialog::getOpenFileUrl());
 }

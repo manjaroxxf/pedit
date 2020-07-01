@@ -1,0 +1,36 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource prefix="/ktexteditor/script">
+<file alias="commands/emmet.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/commands/emmet.js</file>
+<file alias="commands/jumpMatchingIndent.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/commands/jumpMatchingIndent.js</file>
+<file alias="commands/quickcoding.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/commands/quickcoding.js</file>
+<file alias="commands/utils.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/commands/utils.js</file>
+<file alias="files/quickcoding/cpp/a.template">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/files/quickcoding/cpp/a.template</file>
+<file alias="files/quickcoding/cpp/c.template">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/files/quickcoding/cpp/c.template</file>
+<file alias="indentation/ada.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/ada.js</file>
+<file alias="indentation/cmake.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/cmake.js</file>
+<file alias="indentation/cppstyle.README.md">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/cppstyle.README.md</file>
+<file alias="indentation/cppstyle.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/cppstyle.js</file>
+<file alias="indentation/cstyle.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/cstyle.js</file>
+<file alias="indentation/haskell.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/haskell.js</file>
+<file alias="indentation/latex.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/latex.js</file>
+<file alias="indentation/lilypond.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/lilypond.js</file>
+<file alias="indentation/lisp.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/lisp.js</file>
+<file alias="indentation/lua.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/lua.js</file>
+<file alias="indentation/pascal.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/pascal.js</file>
+<file alias="indentation/python.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/python.js</file>
+<file alias="indentation/r.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/r.js</file>
+<file alias="indentation/replicode.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/replicode.js</file>
+<file alias="indentation/ruby.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/ruby.js</file>
+<file alias="indentation/xml.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/indentation/xml.js</file>
+<file alias="libraries/cmake_indenter_config.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/cmake_indenter_config.js</file>
+<file alias="libraries/cursor.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/cursor.js</file>
+<file alias="libraries/documentcursor.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/documentcursor.js</file>
+<file alias="libraries/emmet/editor_interface.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/emmet/editor_interface.js</file>
+<file alias="libraries/emmet/lib.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/emmet/lib.js</file>
+<file alias="libraries/range.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/range.js</file>
+<file alias="libraries/string.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/string.js</file>
+<file alias="libraries/underscore.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/underscore.js</file>
+<file alias="libraries/utils.js">/home/chungzh/Code/pedit/src/3rdparty/ktexteditor/src/script/data/libraries/utils.js</file>
+</qresource>
+</RCC>
