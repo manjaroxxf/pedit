@@ -3,6 +3,7 @@
 #include <KActionCollection>
 #include <KMessageBox>
 #include <KStandardAction>
+#include <KToolBar>
 #include <KXMLGUIFactory>
 
 //
@@ -27,9 +28,11 @@ MainWindow::MainWindow()
     setCentralWidget(view);
     setupActions();
 
-    guiFactory()->addClient(view);
-    createShellGUI(true);
+    setupGUI();
 
+    this->setStandardToolBarMenuEnabled(0);
+
+    this->toolBar()->close();
     show();
 }
 
