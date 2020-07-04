@@ -27,11 +27,8 @@ MainWindow::MainWindow()
 
     setCentralWidget(view);
     setupActions();
-
-    setupGUI();
-
-    this->setStandardToolBarMenuEnabled(0);
-
+    createShellGUI(true);
+    guiFactory()->addClient(view);
     this->toolBar()->close();
     show();
 }
